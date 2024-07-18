@@ -113,3 +113,18 @@ use EmployeeData -- Change database
 
 			Example :
 				drop table tbl_EmployeeDetail_1
+
+
+-- Assignement :
+	Create table = tbl_SubCategory
+		columns
+			Subcategory id
+			subcategory name
+			subcategory price - int
+			subcategory quantity
+
+		Alter
+			1. Change subcategory price from int to decimal
+			2. Add new column subcategory quality
+			3. Remove column subcategory quantity
+			4. Again add the subcategory quantity.
