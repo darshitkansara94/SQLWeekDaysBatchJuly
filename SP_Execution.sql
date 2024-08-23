@@ -1,20 +1,48 @@
-exec sp_InsertCategory 'Desktop'
+Create a SP
+	Perform Insert, Update, Delete and Select
 
-select * from tbl_StudentData
+	Achive using If..else if..else
 
-select * from tbl_Categorymaster
+	select * from tbl_Student
 
-exec sp_InsertStudentData 'ABC',25,254254522,4
+	select GETDATE()
 
-exec sp_InsertStudentData null,25,null,4
+exec sp_CRUDOperation
+	@OperationType = 'Insert',
+	@Student_Name = 'Priyank',
+	@Student_Address = 'Vdodara',
+	@Student_MobileNo = '1234567890',
+	@Student_Age = 25,
+	@Student_Gender = 'Male',
+	@Student_DOB = '2024-08-23',
+	@Student_Marks = 56.34
 
-exec sp_InsertStudentData 'Tanay'
+exec sp_CRUDOperation
+	@OperationType = 'Update',
+	@Student_Id = 1,
+	@Student_Name = 'Priyank',	
+	@Student_MobileNo = '1234567890',
+	@Student_Age = 25,
+	@Student_Gender = 'Male',
+	@Student_DOB = '2024-08-23',
+	@Student_Marks = 56.34
 
-exec sp_InsertStudentData '',26,5485485,NULL
+exec sp_CRUDOperation
+	@OperationType = 'Delete',
+	@Student_Id = 1
 
-exec sp_UpdateCategory 8,'AC'
+exec sp_CRUDOperation
+	@OperationType = 'Select'
 
-exec sp_DeleteCategory 12
+exec sp_CRUDOperationWith_Exists
+	@OperationType = 'Upsert',
+	@Student_Id = 3,
+	@Student_Name = 'Ajay',
+	@Student_Address = 'Vadodara',
+	@Student_MobileNo = '234567891',
+	@Student_Age = 26,
+	@Student_Gender = 'Male',
+	@Student_DOB = '2024-08-22',
+	@Student_Marks = 78.00
 
--- Assignment :
-	-- Create store procedure with multiple parameters for update and delete
+	
